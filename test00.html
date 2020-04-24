@@ -3,15 +3,63 @@
         <title>test00</title>
     </head>
     <body>
-        <div style="text-align: center;">
-            <a href="#" class="myButton"></a><br />
-            My first sound
-        </div>
-        <div style="text-align: center;">
-            <a href="#" class="myButton"></a><br />
-            My second sound
+        <div id="screen">
+            <div id="topmenu" class="horizontal_flex">
+                <div id="title">Retro Sound Effect Key Chain</div>
+                <div id="btn_options">⚙️</div>
+            </div>
+            <div id="container">
+                <div style="text-align: center;">
+                    <a href="#" class="myButton"></a><br />
+                    My first sound
+                </div>
+                <div style="text-align: center;">
+                    <a href="#" class="myButton"></a><br />
+                    My second sound
+                </div>
+            </div>
         </div>
         <style type="text/css">
+            * {
+                font-family: monospace;
+            }
+            
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #screen {
+                max-height: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            #topmenu {
+                background: rgb(0,0,0);
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(85,85,85,1) 100%);
+                color: white;
+                padding: 0.5em;
+                height: 2em;
+            }
+            
+            #container {
+                background: white;
+                overflow-y: scroll;
+            }
+            
+            #btn_options {
+                filter: grayscale(100%);
+                font-size: 2em;
+            }
+            
+            .horizontal_flex {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
             .myButton {
                 height: 300px;
                 width: 300px;
