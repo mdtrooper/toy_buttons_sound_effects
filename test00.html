@@ -9,13 +9,29 @@
                 <div id="title">Retro Sound Effect Key Chain</div>
                 <div id="btn_options">⚙️</div>
             </div>
-            <div id="container">
-                <div style="text-align: center;">
-                    <a href="#" class="myButton"></a><br />
+            <div id="container" class="horizontal_flex">
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
                     My first sound
                 </div>
-                <div style="text-align: center;">
-                    <a href="#" class="myButton"></a><br />
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
+                    My second sound
+                </div>
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
+                    My second sound
+                </div>
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
+                    My second sound
+                </div>
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
+                    My second sound
+                </div>
+                <div class="card" style="text-align: center;">
+                    <a href="#" class="btn_sound"></a><br />
                     My second sound
                 </div>
             </div>
@@ -30,6 +46,21 @@
                 padding: 0px;
                 width: 100%;
                 height: 100%;
+            }
+            
+            .horizontal_flex {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .vertical_flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                align-items: stretch;
             }
             
             #screen {
@@ -48,6 +79,10 @@
             #container {
                 background: white;
                 overflow-y: auto;
+                
+                /* Flex */
+                justify-content: space-evenly;
+                flex-wrap: wrap;
             }
             
             #btn_options {
@@ -55,25 +90,11 @@
                 font-size: 2em;
             }
             
-            .horizontal_flex {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+            .card {
+                margin: 5px;
             }
             
-            .vertical_flex {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                align-items: stretch;
-            }
-            
-            
-            
-            
-            .myButton {
+            .btn_sound {
                 height: 300px;
                 width: 300px;
                 box-shadow: inset 0px 1px 0px 0px #f29c93;
@@ -85,11 +106,11 @@
                 cursor: pointer;
                 outline: 0;
             }
-            .myButton:hover {
+            .btn_sound:hover {
                 background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
                 background-color: #ce0100;
             }
-            .myButton:active {
+            .btn_sound:active {
                 position:relative;
                 top: 4px;
             }
