@@ -16,8 +16,10 @@
             
             function playingIcon() {
                 if (playingCount == 0) {
+                    $("#sound_status").hide();
                 }
                 else {
+                    $("#sound_status").show();
                 }
             }
             
@@ -33,7 +35,7 @@
             <div id="topmenu" class="horizontal_flex">
                 <div id="title">Retro Sound Effect Key Chain</div>
                 <div class="horizontal_flex">
-                    <div id="sound_status">🔊</div>
+                    <div id="sound_status" style="display: none;">🔊</div>
                     <div id="btn_options">⚙️</div>
                 </div>
             </div>
@@ -67,6 +69,7 @@
         <style type="text/css">
             * {
                 font-family: monospace;
+                font-size: 25px;
             }
             
             body {
@@ -100,8 +103,8 @@
                 background: rgb(0,0,0);
                 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(85,85,85,1) 100%);
                 color: white;
-                padding: 0.5em;
-                height: 2em;
+                padding: 5px;
+                max-height: 60px;
             }
             
             #container {
@@ -109,17 +112,26 @@
                 overflow-y: auto;
                 
                 /* Flex */
-                justify-content: space-evenly;
+                justify-content: flex-start;
                 flex-wrap: wrap;
             }
             
-            #btn_options, #sound_status {
+            #title {
+                font-size: 30px;
+            }
+            
+            #btn_options {
                 filter: grayscale(100%);
-                font-size: 2em;
+                font-size: 30px;
+            }
+            #sound_status {
+                filter: grayscale(100%);
+                font-size: 20px;
+                padding-right: 5px;
             }
             
             .card {
-                margin: 5px;
+                margin: 10px;
                 width: 300px;
             }
             
