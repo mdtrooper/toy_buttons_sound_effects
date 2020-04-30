@@ -6,31 +6,45 @@
     </head>
     <body>
         <script type="text/javascript">
+            var playingCount = 0;
+            
             function playSound(id) {
                 window.caca = $(id)[0].play();
                 $(id).on('ended', function() {console.log('ended');});
                 window.caca.then(function() {console.log('then');}).catch(function() {console.log('catch');});
             }
+            
+            function playingIcon() {
+                if (playingCount == 0) {
+                }
+                else {
+                }
+            }
+            
+            function playSound2(file) {
+                var audio = new Audio(file);
+                $(audio).on('ended', function() {playingCount--; playingIcon();});
+                audio.play();
+                playingCount++;
+                playingIcon();
+            }
         </script>
         <div id="screen" class="vertical_flex">
             <div id="topmenu" class="horizontal_flex">
                 <div id="title">Retro Sound Effect Key Chain</div>
-                <div id="btn_options">⚙️</div>
+                <div class="horizontal_flex">
+                    <div id="sound_status">🔊</div>
+                    <div id="btn_options">⚙️</div>
+                </div>
             </div>
             <div id="container" class="horizontal_flex">
                 <div class="card" style="text-align: center;">
-                    <a href="#" onclick="javascript: playSound('#first_audio');" class="btn_sound"></a><br />
+                    <a href="#" onclick="javascript: playSound2('quick_fart.wav');" class="btn_sound"></a><br />
                     My first sound
-                    <audio id="first_audio">
-                        <source src="quick_fart.wav" type="audio/wav">
-                    </audio>
                 </div>
                 <div class="card" style="text-align: center;">
-                    <a href="#" onclick="javascript: playSound('#second_audio');" class="btn_sound"></a><br />
+                    <a href="#" onclick="javascript: playSound2('beethoven.ogg');" class="btn_sound"></a><br />
                     My second sound
-                    <audio id="second_audio">
-                        <source src="beethoven.ogg" type="audio/ogg">
-                    </audio>
                 </div>
                 <div class="card" style="text-align: center;">
                     <a href="#" class="btn_sound"></a><br />
@@ -99,7 +113,7 @@
                 flex-wrap: wrap;
             }
             
-            #btn_options {
+            #btn_options, #sound_status {
                 filter: grayscale(100%);
                 font-size: 2em;
             }
